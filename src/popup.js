@@ -10,6 +10,12 @@ export class Popup {
         
     }
 
+    setContent(contentNode) {
+        const containerContent = this._popupElement.querySelector('.popup__content');
+        containerContent.innerHTML = '';
+        containerContent.append(contentNode)
+    }
+
     open() {
         this._popupElement.classList.add(`popup_active`);
         document.addEventListener('keyup', this.#handleEscUp)
